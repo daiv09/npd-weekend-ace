@@ -9,34 +9,52 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* NPD Orange Theme */
+    --primary: 18 100% 51%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 18 100% 46%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 18 100% 51%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 18 100% 51%;
 
-    --radius: 0.5rem;
+    /* Custom NPD Design Tokens */
+    --npd-orange: 18 100% 51%;
+    --npd-orange-hover: 18 100% 46%;
+    --npd-orange-light: 18 100% 95%;
+    --npd-text-dark: 0 0% 15%;
+    --npd-text-gray: 0 0% 45%;
+    
+    /* Gradients */
+    --gradient-orange: linear-gradient(135deg, hsl(18 100% 51%), hsl(25 100% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 12px hsl(0 0% 0% / 0.1);
+    --shadow-button: 0 2px 8px hsl(18 100% 51% / 0.3);
+    --shadow-hover: 0 8px 32px hsl(18 100% 51% / 0.2);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,61 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* NPD Button Variants */
+  .btn-npd-primary {
+    @apply bg-[hsl(var(--npd-orange))] text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-[var(--shadow-button)] hover:bg-[hsl(var(--npd-orange-hover))] hover:shadow-[var(--shadow-hover)] transform hover:scale-105 transition-all duration-300;
+  }
+  
+  .btn-npd-secondary {
+    @apply bg-white text-[hsl(var(--npd-orange))] px-8 py-4 rounded-xl font-semibold text-lg border-2 border-[hsl(var(--npd-orange))] hover:bg-[hsl(var(--npd-orange))] hover:text-white transform hover:scale-105 transition-all duration-300;
+  }
+
+  /* NPD Cards */
+  .card-npd {
+    @apply bg-white rounded-2xl p-8 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-2;
+  }
+
+  /* NPD Sections */
+  .section-npd {
+    @apply py-20 px-6;
+  }
+  
+  .hero-npd {
+    @apply min-h-screen bg-gradient-to-br from-white to-[hsl(var(--npd-orange-light))] relative overflow-hidden;
+  }
+  
+  .section-orange {
+    @apply bg-[hsl(var(--npd-orange))] text-white;
+  }
+
+  /* Typography */
+  .heading-hero {
+    @apply text-5xl md:text-7xl font-bold text-[hsl(var(--npd-text-dark))] leading-tight mb-6;
+  }
+  
+  .heading-section {
+    @apply text-4xl md:text-5xl font-bold text-[hsl(var(--npd-orange))] mb-8;
+  }
+  
+  .heading-card {
+    @apply text-2xl font-bold text-[hsl(var(--npd-text-dark))] mb-4;
+  }
+  
+  .text-body {
+    @apply text-lg text-[hsl(var(--npd-text-gray))] leading-relaxed;
+  }
+
+  /* Animations */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .fade-in-up.in-view {
+    @apply opacity-100 translate-y-0;
   }
 }
