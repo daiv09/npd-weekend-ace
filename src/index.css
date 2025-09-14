@@ -125,24 +125,15 @@ All colors MUST be HSL.
 @layer components {
 
   .btn-npd-primary {
-  @apply bg-[hsl(var(--npd-orange))] 
-         text-white 
-         px-10 py-5  /* increased from px-8 py-4 */
-         rounded-xl 
-         font-semibold 
-         text-xl       /* increased from text-lg */
-         shadow-[var(--shadow-button)] 
-         hover:bg-[hsl(var(--npd-orange-hover))] 
-         hover:shadow-[var(--shadow-hover)] 
-         transform 
-         hover:scale-105 
-         transition-all 
-         duration-300;
-}
-
+    @apply bg-[hsl(var(--npd-orange))] text-white px-12 py-6
+    /* increased from px-8 py-4 */
+    rounded-xl font-semibold text-2xl
+    /* increased from text-lg */
+    shadow-[var(--shadow-button)] hover:bg-[hsl(var(--npd-orange-hover))] hover:shadow-[var(--shadow-hover)] transform hover:scale-105 transition-all duration-300;
+  }
 
   .btn-npd-secondary {
-    @apply bg-white text-[hsl(var(--npd-orange))] px-8 py-4 rounded-xl font-semibold text-lg border-2 border-[hsl(var(--npd-orange))] hover:bg-[hsl(var(--npd-orange))] hover:text-white transform hover:scale-105 transition-all duration-300;
+    @apply bg-white text-[hsl(var(--npd-orange))] px-10 py-5 rounded-xl font-semibold text-xl hover:border-2 hover:border-white shadow-[var(--shadow-button)] hover:bg-[hsl(var(--npd-orange))] hover:text-white hover:border-[hsl(var(--npd-orange))] transform hover:scale-105 transition-all duration-300;
   }
 
   /* NPD Cards */

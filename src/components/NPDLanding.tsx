@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useRef } from "react";
 import { Rocket, Wrench, Globe, Mail, Linkedin } from "lucide-react";
 import heroImage from "@/assets/npd-hero-bg.jpg";
+import EmailForm from "./EmailForm";
 
 const NPDLanding = () => {
   return (
@@ -30,7 +32,7 @@ const NPDLanding = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="btn-npd-primary">
+              <Button className="btn-npd-primary px-12 py-6 text-xl">
                 Register Now
               </Button>
             </a>
@@ -75,7 +77,8 @@ const NPDLanding = () => {
               </div>
             </div>
             <p className="text-body">
-              Designed for engineers across industries, this program bridges theory with practical applications.
+              Designed for engineers across industries, this program bridges
+              theory with practical applications.
             </p>
           </div>
         </div>
@@ -92,7 +95,8 @@ const NPDLanding = () => {
               </div>
               <h3 className="heading-card">Accelerate Your Career Growth</h3>
               <p className="text-body">
-                Gain specialized knowledge that sets you apart in today's competitive engineering landscape.
+                Gain specialized knowledge that sets you apart in today's
+                competitive engineering landscape.
               </p>
             </Card>
 
@@ -100,9 +104,12 @@ const NPDLanding = () => {
               <div className="w-16 h-16 bg-[hsl(var(--npd-orange))] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Wrench className="w-8 h-8 text-white" />
               </div>
-              <h3 className="heading-card">Hands-on Learning with Industry Insights</h3>
+              <h3 className="heading-card">
+                Hands-on Learning with Industry Insights
+              </h3>
               <p className="text-body">
-                Experience real-world scenarios and practical applications from industry experts.
+                Experience real-world scenarios and practical applications from
+                industry experts.
               </p>
             </Card>
 
@@ -110,9 +117,12 @@ const NPDLanding = () => {
               <div className="w-16 h-16 bg-[hsl(var(--npd-orange))] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Globe className="w-8 h-8 text-white" />
               </div>
-              <h3 className="heading-card">Connect Across Domains & Industries</h3>
+              <h3 className="heading-card">
+                Connect Across Domains & Industries
+              </h3>
               <p className="text-body">
-                Network with professionals from diverse engineering backgrounds and expand your horizons.
+                Network with professionals from diverse engineering backgrounds
+                and expand your horizons.
               </p>
             </Card>
           </div>
@@ -122,14 +132,23 @@ const NPDLanding = () => {
       {/* Upcoming Session */}
       <section className="section-npd section-orange">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Upcoming Sessions</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            Upcoming Sessions
+          </h2>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            Our NPD training sessions take place <span className="font-semibold">every weekend</span>.
-            Don’t miss your chance to join and accelerate your learning journey!
+            Our NPD training sessions take place{" "}
+            <span className="font-semibold">every weekend</span>. Don’t miss
+            your chance to join and accelerate your learning journey!
           </p>
-          <Button className="btn-npd-secondary">
-            Register Now
-          </Button>
+          <a
+            href="https://forms.gle/kspAiNTyQ2WJeSou9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="btn-npd-secondary px-12 py-6 text-xl">
+              Register Now
+            </Button>
+          </a>
         </div>
       </section>
 
@@ -143,9 +162,9 @@ const NPDLanding = () => {
 
           {/* Quote */}
           <blockquote className="text-2xl md:text-3xl text-[hsl(var(--npd-text-dark))] font-medium italic leading-relaxed relative z-10">
-            A big thank you to everyone who attended my last session!
-            These programs are designed to bridge engineering knowledge
-            with real-world applications.
+            A big thank you to everyone who attended my last session! These
+            programs are designed to bridge engineering knowledge with
+            real-world applications.
           </blockquote>
 
           {/* Author */}
@@ -155,37 +174,19 @@ const NPDLanding = () => {
         </div>
       </section>
 
-
       {/* Stay Connected */}
       <section className="section-npd section-orange">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Stay Connected</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            Stay Connected
+          </h2>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            Want to be notified about upcoming sessions? Drop your email or connect with me directly.
+            Want to be notified about upcoming sessions? Drop your email or
+            connect with me directly.
           </p>
 
-          {/* Email Form */}
-          <div className="relative z-10">
-            <form
-              className="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto mb-10"
-              onSubmit={(e) => {
-                e.preventDefault();
-                // handle email submission here (Google Sheets, Firebase, etc.)
-              }}
-            >
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-                className="flex-1 px-4 py-3 rounded-xl border border-gray-300 
-                 text-black placeholder-gray-500
-                 focus:ring-2 focus:ring-[hsl(var(--npd-orange))] focus:outline-none"
-              />
-              <Button type="submit" className="btn-npd-primary">
-                Notify Me
-              </Button>
-            </form>
-          </div>
+          {/* Use EmailForm here */}
+          <EmailForm />
 
           {/* Icons */}
           <div className="flex justify-center space-x-6">
@@ -214,7 +215,8 @@ const NPDLanding = () => {
       <footer className="py-8 bg-white border-t border-[hsl(var(--border))]">
         <div className="container mx-auto text-center">
           <p className="text-[hsl(var(--npd-orange))] font-medium">
-            © 2025 Jaganath Harihar | Bridging the Gap Between Industry & Academia
+            © 2025 Jaganath Harihar | Bridging the Gap Between Industry &
+            Academia
           </p>
         </div>
       </footer>
