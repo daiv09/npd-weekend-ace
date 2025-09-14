@@ -25,7 +25,7 @@ const NPDLanding = () => {
               Master the New Product Development (NPD) Process
             </h1>
             <h2 className="text-2xl md:text-3xl text-[hsl(var(--npd-text-gray))] mb-8 leading-relaxed">
-              Weekend Training for Engineers & Designers (0–5+ Years Experience)
+              Weekend Training for Engineers & Designers (0–8+ Years Experience)
             </h2>
             <a
               href="https://forms.gle/kspAiNTyQ2WJeSou9"
