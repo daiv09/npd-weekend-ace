@@ -9,14 +9,14 @@ const NPDLanding = () => {
       {/* Hero Section */}
       <section className="hero-npd">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Modern engineering workspace" 
+          <img
+            src={heroImage}
+            alt="Modern engineering workspace"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent"></div>
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-6 flex items-center min-h-screen">
           <div className="max-w-4xl">
             <h1 className="heading-hero">
@@ -25,9 +25,15 @@ const NPDLanding = () => {
             <h2 className="text-2xl md:text-3xl text-[hsl(var(--npd-text-gray))] mb-8 leading-relaxed">
               Weekend Training for Engineers & Designers (0–5+ Years Experience)
             </h2>
-            <Button className="btn-npd-primary">
-              Register Now
-            </Button>
+            <a
+              href="https://forms.gle/kspAiNTyQ2WJeSou9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="btn-npd-primary">
+                Register Now
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -116,48 +122,85 @@ const NPDLanding = () => {
       {/* Upcoming Session */}
       <section className="section-npd section-orange">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Upcoming Session</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Upcoming Sessions</h2>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            First session starts next weekend – limited seats available!
+            Our NPD training sessions take place <span className="font-semibold">every weekend</span>.
+            Don’t miss your chance to join and accelerate your learning journey!
           </p>
           <Button className="btn-npd-secondary">
-            Secure Your Spot
+            Register Now
           </Button>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="section-npd bg-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="relative">
-            <div className="text-6xl text-[hsl(var(--npd-orange))] opacity-30 absolute -top-8 left-1/2 transform -translate-x-1/2">"</div>
-            <blockquote className="text-2xl md:text-3xl text-[hsl(var(--npd-text-dark))] font-medium italic leading-relaxed relative z-10">
-              A big thank you to everyone who attended my last session! These programs are designed to bridge engineering knowledge with real-world applications.
-            </blockquote>
-            <cite className="block mt-8 text-lg text-[hsl(var(--npd-orange))] font-semibold">
-              — Jaganath Harihar
-            </cite>
+      <section className="section-npd bg-orange-50 py-16">
+        <div className="container mx-auto max-w-3xl text-center relative px-6">
+          {/* Quotation Mark */}
+          <div className="text-7xl text-[hsl(var(--npd-orange))] opacity-20 absolute top-0 left-1/2 -translate-x-1/2">
+            “
           </div>
+
+          {/* Quote */}
+          <blockquote className="text-2xl md:text-3xl text-[hsl(var(--npd-text-dark))] font-medium italic leading-relaxed relative z-10">
+            A big thank you to everyone who attended my last session!
+            These programs are designed to bridge engineering knowledge
+            with real-world applications.
+          </blockquote>
+
+          {/* Author */}
+          <cite className="block mt-8 text-lg text-[hsl(var(--npd-orange))] font-semibold not-italic">
+            — Jaganath Harihar
+          </cite>
         </div>
       </section>
+
 
       {/* Stay Connected */}
       <section className="section-npd section-orange">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Stay Connected</h2>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            Want to be notified about upcoming sessions? Let's connect.
+            Want to be notified about upcoming sessions? Drop your email or connect with me directly.
           </p>
+
+          {/* Email Form */}
+          <div className="relative z-10">
+            <form
+              className="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto mb-10"
+              onSubmit={(e) => {
+                e.preventDefault();
+                // handle email submission here (Google Sheets, Firebase, etc.)
+              }}
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-300 
+                 text-black placeholder-gray-500
+                 focus:ring-2 focus:ring-[hsl(var(--npd-orange))] focus:outline-none"
+              />
+              <Button type="submit" className="btn-npd-primary">
+                Notify Me
+              </Button>
+            </form>
+          </div>
+
+          {/* Icons */}
           <div className="flex justify-center space-x-6">
-            <a 
-              href="mailto:contact@example.com" 
+            {/* Email */}
+            <a
+              href="mailto:jaganathharihar@gmail.com"
               className="w-16 h-16 bg-white rounded-full flex items-center justify-center hover:bg-[hsl(var(--npd-orange-light))] transition-all duration-300 group"
             >
               <Mail className="w-8 h-8 text-[hsl(var(--npd-orange))] group-hover:text-[hsl(var(--npd-orange))]" />
             </a>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
+
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com/in/jaganathharihar" // replace with your actual LinkedIn profile link
+              target="_blank"
               rel="noopener noreferrer"
               className="w-16 h-16 bg-white rounded-full flex items-center justify-center hover:bg-[hsl(var(--npd-orange-light))] transition-all duration-300 group"
             >
